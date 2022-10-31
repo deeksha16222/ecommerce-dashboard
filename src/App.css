@@ -44,6 +44,15 @@ a{
   color:white;
 }
 
+.col-sm6.offset-sm-3 {
+  padding-top: 40px;
+  padding-left: 100px;
+  text-align: center;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
 .App-link {
   color: #61dafb;
 }
