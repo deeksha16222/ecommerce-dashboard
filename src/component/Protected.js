@@ -2,20 +2,19 @@ import React , {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
-export default function Login(){
-
+export default function Protected(props){
+   let Cmp = props.Cmp
     useEffect(()=>{
-        if(localStorage.getItem('user-info'))
+        if(!localStorage.getItem('user-info'))
         {
-            navigate.push("./add")
+            navigate.push("./register")
         }
     
     },[])
     const navigate = useNavigate();
     return(
     <div>
-    <Header/>
-    <h1> Login Component </h1>
+    <Cmp/>
     </div>
     )
 }

@@ -44,6 +44,10 @@ a{
   color:white;
 }
 
+a.dropdown-toggle.nav-link {
+  color: white;
+}
+
 .col-sm6.offset-sm-3 {
   padding-top: 40px;
   padding-left: 100px;
