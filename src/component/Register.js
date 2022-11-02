@@ -16,7 +16,7 @@ export default function Register() {
   async function signUp() {
     let item = { name, password, email };
     console.warn(name, password, email);
-    let result = await fetch("https://reqres.in/api/register", {
+    let result = await fetch("", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -26,6 +26,7 @@ export default function Register() {
     });
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
+    console.warn(result);
     navigate("/add");
   }
 
