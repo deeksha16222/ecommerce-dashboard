@@ -15,7 +15,7 @@ export default function Login() {
 
   async function login() {
     let item = { email, password };
-    let result = fetch("", {
+    let result = fetch("https://reqres.in/api/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
