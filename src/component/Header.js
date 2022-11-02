@@ -1,10 +1,14 @@
 import React from "react";
 import { NavDropdown } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 export default function Header() {
   const user = JSON.parse(localStorage.getItem("user-info"));
+  function logout() {
+    localStorage.clear();
+    Navigate("/register");
+  }
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -28,11 +32,13 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <nav>
-          <NavDropdown title={user.name}>
-            <NavDropdown.Item> Logout </NavDropdown.Item>
-          </NavDropdown>
-        </nav>
+        {localStorage.getItem("user-info") ? (
+          <nav>
+            <NavDropdown title={user && user.name}>
+              <NavDropdown.Item onClick={logout}> Logout </NavDropdown.Item>
+            </NavDropdown>
+          </nav>
+        ) : null}
       </nav>
     </div>
   );

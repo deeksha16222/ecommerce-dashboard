@@ -6,7 +6,7 @@ export default function Register() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      navigate("./add");
+      navigate("/add");
     }
   }, []);
   const [name, setName] = useState("");
@@ -26,7 +26,7 @@ export default function Register() {
     });
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
-    navigate.push("./add");
+    navigate("/add");
   }
 
   return (
