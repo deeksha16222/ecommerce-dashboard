@@ -9,6 +9,7 @@ import Register from "./component/Register.js";
 import HomePage from "./component/HomePage";
 import ProductList from "./component/ProductList";
 
+
 function App() {
   return (
     <div>
@@ -19,7 +20,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/add" element={<AddProduct />} />
           <Route exact path="/update" element={<UpdateProduct />} />
-          <Route exact path="/list" element={<UpdateProduct />} />
+          <Route exact path="/list" element={<ProductList />} />
         </Routes>
       </Router>
     </div>

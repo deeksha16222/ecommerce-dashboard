@@ -4,7 +4,7 @@ import { NavDropdown } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 
 export default function Header() {
-  const user = JSON.parse(localStorage.getItem("user-info"));
+  const user = JSON.stringify(localStorage.getItem("user-info"));
   function logout() {
     localStorage.clear();
     Navigate("/register");
