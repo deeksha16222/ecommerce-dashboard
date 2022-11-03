@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Header from "./Header";
 
 export default function AddProduct() {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   async function AddProduct() {
-    console.warn(name, file, price, description);
+    console.warn(title, file, price, description);
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("name", name);
+    formData.append("name", title);
     formData.append("price", price);
     formData.append("description", description);
-    let result = await fetch("", {
+    let result = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
       body: formData,
     });
@@ -27,8 +27,8 @@ export default function AddProduct() {
         <input
           type="text"
           className="form-control"
-          placeholder="name"
-          onChange={(e) => setName(e.target.value)}
+          placeholder="title"
+          onChange={(e) => setTitle(e.target.value)}
         />{" "}
         <br />
         <input

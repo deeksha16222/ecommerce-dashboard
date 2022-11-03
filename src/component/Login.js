@@ -15,7 +15,7 @@ export default function Login() {
 
   async function login() {
     let item = { email, password };
-    let result = fetch("https://reqres.in/api/register", {
+    let result = fetch("https://reqres.in/api/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -32,7 +32,7 @@ export default function Login() {
     <div>
       <Header />
       <div className="col-sm6 offset-sm-3">
-        <h1>Login Up</h1> <br />
+        <h1>Login</h1> <br />
         <input
           type="email"
           className="form-control"
