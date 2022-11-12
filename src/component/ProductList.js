@@ -9,7 +9,7 @@ export default function ProductList() {
       .then((result) => {
         setShow(result);
       });
-  });
+  },[]);
   console.warn("data", show);
   return (
     <div>

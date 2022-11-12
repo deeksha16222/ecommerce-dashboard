@@ -1,24 +1,25 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
 export default function AddProduct() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  async function AddProduct() {
-    console.warn(title, file, price, description);
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("name", title);
-    formData.append("price", price);
-    formData.append("description", description);
+  const AddProduct = async () => {
     let result = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify({ title, price, file, description }),
+      headers: {
+        "Content-type": "application/json",
+      },
     });
-    alert("data has been saved");
-  }
+    result = await result.json();
+    console.warn(result);
+    navigate("/list");
+  };
   return (
     <div>
       <Header />

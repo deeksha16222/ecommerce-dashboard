@@ -24,24 +24,24 @@
   color: white;
 }
 
-a{
-  color:white;
+a {
+  color: white;
   text-decoration: none;
 }
 
-.navbar-nav{
-  gap:60px;
+.navbar-nav {
+  gap: 60px;
   justify-content: space-between;
 }
 
-.navbar-collapse{
+.navbar-collapse {
   flex-basis: 0%;
   flex-grow: 0.1;
   align-items: center;
 }
 
-.navbar-light .navbar-brand{
-  color:white;
+.navbar-light .navbar-brand {
+  color: white;
 }
 
 a.dropdown-toggle.nav-link {
@@ -61,6 +61,9 @@ a.dropdown-toggle.nav-link {
   color: #61dafb;
 }
 
+.usertitle {
+  color: white;
+}
 
 @keyframes App-logo-spin {
   from {

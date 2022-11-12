@@ -6,7 +6,7 @@ export default function Register() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      navigate("/add");
+      navigate("/list");
     }
   }, []);
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ export default function Register() {
 
   async function signUp() {
     let item = { name, password, email };
-    console.warn(name, password, email);
+
     let result = await fetch("https://reqres.in/api/register", {
       method: "POST",
       headers: {
@@ -26,9 +26,9 @@ export default function Register() {
     });
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
+
     navigate("/add");
   }
-
   return (
     <>
       <Header />

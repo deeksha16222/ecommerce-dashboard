@@ -1,13 +1,13 @@
 import React from "react";
 import { NavDropdown } from "react-bootstrap";
-
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   const user = JSON.stringify(localStorage.getItem("user-info"));
   function logout() {
     localStorage.clear();
-    Navigate("/register");
+    navigate("/register");
   }
   return (
     <div>
@@ -23,7 +23,6 @@ export default function Header() {
                   <Link to="/add"> Add Product </Link>
                   <Link to="/update"> Update Product</Link>
                   <Link to="/list"> List Products </Link>
-
                 </>
               ) : (
                 <>
@@ -36,7 +35,7 @@ export default function Header() {
         </div>
         {localStorage.getItem("user-info") ? (
           <nav>
-            <NavDropdown title={user && user.name}>
+            <NavDropdown className="usertitle" title="User">
               <NavDropdown.Item onClick={logout}> Logout </NavDropdown.Item>
             </NavDropdown>
           </nav>
